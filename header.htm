@@ -1,0 +1,541 @@
+<head>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Barlow:400,600);
+        body{
+            margin:0px;
+            font-family: Barlow, Arial, Helvetica;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333333;
+        }
+
+        #header-border {
+            width: 100%;
+            border-bottom: 1px solid #CCC;
+        }
+        
+        #top-bar {
+            display:flex;
+            display:-webkit-flex;
+            background-color: #F5F5F5;
+            padding: 5px 20px 5px 20px;
+            justify-content: flex-end;
+        }
+        #logged-in {
+            visibility: hidden;
+        }
+
+        .line-break {
+            color: #CCCCCC;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .top-bar-header-icons {
+            padding-right: 16px;
+        }
+
+        form {
+            margin: 0px;
+        }
+        
+        /* #bottom-header > span, #bottom-header > form {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        } */
+        
+        #bottom-header > form {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width:auto;
+            order: 3;
+            flex-basis: 100%;
+            height: 60px;
+        } 
+        
+        #bottom-header {
+            padding: 15px;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            position:relative;
+            align-items: center;
+        }
+
+        #argos-logo {
+            order: 1;
+            width: 70px;
+            height: 60px;
+            padding-right: 10px;
+        }
+
+        #argos-logo-container {
+            margin-right: 20px;
+        }
+
+        #right-cta-bottom-header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 300px;
+            order: 4;
+            flex-basis: 300px;
+        }
+
+        #right-cta-bottom-header > * {
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+
+        #left-cta-bottom-header {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 440px;
+            order: 2;
+            margin-right: 40px;
+        }
+
+        .nav-block {
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 0 10px 0 10px;
+            margin: 0 10px 0 10px;
+        }
+
+        #shop-hidden-for-non-mobile {
+            display: none;
+        }
+
+        .bottom-header-icons {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+        }
+        
+        #bottom-header > form > * {
+            padding: 10px;
+            border-color: #707070;
+            border-width: 1px;
+            height: 45px;
+            font-family: Barlow, Arial, Helvetica;
+            font-size: 16px;
+        }
+
+        #bottom-header > form > [type="search"] {
+            width:100%;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            color:#939393;
+            width: 100%;
+            margin-left: -40px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            padding-left: 40px;
+            border-right: none;
+        }
+
+        #search-text {
+            font-weight: 800px;
+        }
+        
+        #cancel-search-button {
+            background-color: #FFF;
+            border: none;
+            border-radius: 50%;
+            height: 17px !important;
+            width: 17px !important;
+            position: relative;
+            z-index: 3;
+            right: 140px;
+            visibility:hidden;
+        }
+
+        #cancel-search-button > svg {
+            position: relative;
+            z-index: 3;
+            right:10px;
+            bottom:10px;
+            display: none;
+        }
+
+        #bottom-header > form > [name="main-search-button"] {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            background-color:#707070;
+            color: #F5F5F5;
+            margin-right: 40px;
+            font-weight: 600;
+        }
+
+        [type="search"]::-webkit-search-cancel-button {
+            display:none;
+        }
+        
+        #search-looking-glass-input {
+            position: relative;
+            z-index: 2;
+        }
+
+        #search-looking-glass-button {
+            display:none;
+        }
+
+        @media(max-width:767px) {
+            #top-bar{
+                display: none;
+            }
+
+            #left-cta-bottom-header {
+                display:none;
+            }
+
+            #bottom-header {
+                display: flex;
+                padding-left: 10px;
+                padding-top: 15px;
+            }
+            
+            #shop-hidden-for-non-mobile {
+                display: inline;
+            }
+
+            #argos-logo {
+                height:42px;
+                width: 49px;
+                
+            }
+
+            #argos-logo-container {
+                max-width: 487px;
+                width: 100%;
+            }
+
+            #header-border {
+                height: 120px;
+            }
+
+            #bottom-header > form {
+                order: 3;
+                position: absolute;
+                top: 60px;
+                width: 95%;
+                margin-right: 30px;
+            } 
+
+            #right-cta-bottom-header {
+                order: 2;
+                min-width: 240px;
+                max-width: 240px;
+            }
+
+            #bottom-header > form > [type="search"] {
+                margin-left:0px; 
+                padding-left:10px;
+            }
+
+            #bottom-header > form > [name="main-search-button"] {
+                margin-right:-10px;
+            }
+
+        }
+
+        @media(min-width:768px) and (max-width:1199px) {
+            #header-border {
+                height: 165px;
+            }
+
+            #argos-logo { 
+                width:60px;
+                height:51px;
+            }
+            
+            #bottom-header {
+                position:relative;
+                height: 51px;
+            }
+
+            #bottom-header > form {
+                order: 2;
+                min-width: 400px;
+                max-width: 1200px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width:auto;
+                flex-basis: 100%;
+                flex-grow:1;
+            } 
+            
+            #right-cta-bottom-header {
+                order: 3;
+                max-width: 210px;
+            }
+
+            #left-cta-bottom-header {
+                order: 4;
+                height:65px;
+                position: absolute;
+                top: 70px;
+                left: 5px;
+                max-width: 342px;
+            }
+        }
+
+        @media(max-width:991px) {
+            #search-looking-glass-button {
+                display: block;
+            }
+
+            #search-text {
+                display: none;
+            }  
+
+            button {
+                height: 38px;
+            }
+            
+            #search-looking-glass-input {
+                display:none;
+            }
+
+        }
+
+        @media(min-width:768px) and (max-width:991px) {
+            #bottom-header > form > [type="search"] {
+                margin-left:30px;
+                padding-left:10px;
+            }
+        }
+
+        @media(min-width:992px) and (max-width:1199px) {
+            #bottom-header > form > [type="search"] {
+                margin-left:20px;
+                padding-left:40px;
+            }
+
+            #search-looking-glass-input {
+                left: 60px;
+            }
+            #argos-logo-container {
+                margin-right: 0px;
+            }
+        }
+        
+        #shop-arrow {
+            position:relative;
+            vertical-align: text-bottom;
+        }
+
+        #shop-arrow-container:hover #shop-arrow{
+            animation-name: rotate-180;
+            animation-duration: 0.2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes rotate-180 {
+            0% { transform:rotate(0deg)}
+            100% { transform: rotate(180deg)}
+        }
+
+        .red-underline {
+            display:block;
+            margin: 0px auto;
+
+        }
+        .red-underline-on-hover:hover .red-underline {
+            animation-name: red-underline;
+            animation-duration: 0.2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes red-underline {
+            0% {border-bottom: 2.5px solid #D42114;
+                width: 0%}
+            100% {border-bottom: 2.5px solid #D42114;
+                width:90%}
+        }
+
+        .red-on-hover:hover > * {
+            color: #D42114;
+            fill: #D42114;
+        }
+
+        #bottom-header > form > [type="search"]:hover {
+            background-color: #F5F5F5;
+        }
+
+        #bottom-header > form > [name="main-search-button"]:hover {
+            background-color: #333;
+        }
+
+        input:focus::placeholder {
+            visibility:
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <section>
+            <div id="header-border">
+                <article id="top-bar">
+                    <span id="logged-in" class="red-on-hover">
+                        Hi, <strong><%Username%></strong> 
+                        <a href="">
+                            (Sign out)
+                        </a> 
+                        <span class="line-break">|</span>
+                    </span>
+                    <a href="" class="red-on-hover">
+                        <svg class="top-bar-header-icons" viewBox="0 0 24 24" height="1em" width="1em"><path d="M15 18v-5.25h-2.25V18H15zm1.5 0H21V6H3v12h4.5v-6a.75.75 0 0 1 .75-.75h7.5a.75.75 0 0 1 .75.75v6zM9 18h2.25v-5.25H9V18zm.75-10.5h4.5a.75.75 0 1 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5zM3 4.5h18A1.5 1.5 0 0 1 22.5 6v12a1.5 1.5 0 0 1-1.5 1.5H3A1.5 1.5 0 0 1 1.5 18V6A1.5 1.5 0 0 1 3 4.5z"></path></svg>
+                        <span>Stores</span>
+                    </a>
+                    <span class="line-break">|</span>
+                    <a href=""class="red-on-hover">
+                        <svg class="top-bar-header-icons" viewBox="0 0 24 24" height="1em" width="1em"><path d="M11.25 15v-3h-.75a.75.75 0 1 1 0-1.5H12a.75.75 0 0 1 .75.75V15h.75a.75.75 0 1 1 0 1.5h-3a.75.75 0 1 1 0-1.5h.75zm.75 7.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm0-1.5a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0-12a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"></path></svg>
+                        <span>Help</span>
+                    </a>
+                </article>
+                <nav>
+                    <div id="bottom-header">
+                        <div id="argos-logo-container">
+                            <a href="">
+                                <img id="argos-logo" src="https://media.4rgos.it/i/Argos/logo_argos2x?w=120&qlt=75&fmt=webp"/>
+                            </a>
+                        </div>
+                        <span id="left-cta-bottom-header">
+                            <div class="red-underline-on-hover">
+                                <a href="" class="nav-block" id="shop-arrow-container">
+                                    <span>Shop</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" id="shop-arrow"><path d="M12 14.69L5.03 7.72a.75.75 0 0 0-1.06 1.06l7.5 7.5a.75.75 0 0 0 1.06 0l7.5-7.5a.75.75 0 0 0-1.06-1.06L12 14.69z"></path></svg>
+                                </a>
+                                <div class="red-underline"></div>
+                            </div>    
+                            <div class="red-underline-on-hover"> 
+                                <a href="" class="nav-block">
+                                    <span>Christmas</span>
+                                </a>
+                                <div class="red-underline"></div>
+                            </div> 
+                            <div class="red-underline-on-hover"> 
+                                <a href="" class="nav-block">
+                                    <span>Clearance</span>
+                                </a>
+                                <div class="red-underline"></div>
+                            </div>
+                        </span>
+                        <form action="/search">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="grey" width="16px" height="16px" id="search-looking-glass-input"><path d="M15.03 16.09a8.25 8.25 0 1 1 1.06-1.06l6.19 6.19a.75.75 0 0 1-1.06 1.06l-6.19-6.19zm-5.28.41a6.75 6.75 0 1 0 0-13.5 6.75 6.75 0 0 0 0 13.5z"></path></svg>
+                            <input type="search" name="top search bar" autoComplete="off" autoCapitalize="off" autoCorrect="off" spellcheck="False" placeholder="What are you looking for?">
+                            <button name="main-search-button" type="submit"><span id="search-text">Search</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="20px" height="20px" id="search-looking-glass-button"><path d="M15.03 16.09a8.25 8.25 0 1 1 1.06-1.06l6.19 6.19a.75.75 0 0 1-1.06 1.06l-6.19-6.19zm-5.28.41a6.75 6.75 0 1 0 0-13.5 6.75 6.75 0 0 0 0 13.5z"></path></svg>
+                            </button>
+                            <button type="button" id="cancel-search-button">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="grey" width="20px" height="20px">
+                                <path d="M10.94 12L7.72 8.78a.75.75 0 0 1 1.06-1.06L12 10.94l3.22-3.22a.75.75 0 0 1 1.06 1.06L13.06 12l3.22 3.22a.75.75 0 0 1-1.06 1.06L12 13.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L10.94 12zM12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm0-1.5a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"></path>
+                                </svg>
+                            </button>
+                        </form>
+                        <span id="right-cta-bottom-header">
+                            <span id="shop-hidden-for-non-mobile" class="red-on-hover">
+                                <a href="">
+                                <div class="bottom-header-icons">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="1em" height="1em"><path d="M3.75 5.25h16.5a.75.75 0 1 1 0 1.5H3.75a.75.75 0 0 1 0-1.5zm0 6h16.5a.75.75 0 1 1 0 1.5H3.75a.75.75 0 1 1 0-1.5zm0 6h16.5a.75.75 0 1 1 0 1.5H3.75a.75.75 0 1 1 0-1.5z"></path></svg>
+                                </div>
+                                <div>
+                                    Shop
+                                </div>
+                                </a>
+                            </span>
+                            <span class="red-on-hover">
+                                <a href="">
+                                <div class="bottom-header-icons">
+                                    <svg viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M12 12a5.25 5.25 0 1 1 0-10.5A5.25 5.25 0 0 1 12 12zm0-1.5A3.75 3.75 0 1 0 12 3a3.75 3.75 0 0 0 0 7.5zm-8.047 4.482C6.63 13.995 9.314 13.5 12 13.5c2.686 0 5.37.495 8.047 1.482A3.75 3.75 0 0 1 22.5 18.5v3.25a.75.75 0 0 1-.75.75H2.25a.75.75 0 0 1-.75-.75V18.5c0-1.57.98-2.975 2.453-3.518zM21 18.5a2.25 2.25 0 0 0-1.472-2.11C17.014 15.461 14.506 15 12 15c-2.506 0-5.014.462-7.528 1.39A2.25 2.25 0 0 0 3 18.5V21h18v-2.5z"></path></svg>
+                                </div>
+                                <div>
+                                    Account
+                                </div>
+                                </a>
+                            </span>
+                            <span class="red-on-hover">
+                                <a href="">
+                                    <div class="bottom-header-icons">
+                                        <svg viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M21.6 5.55l.07.115c2.73 5.458-.506 10.582-9.32 15.248a.75.75 0 0 1-.7 0C2.835 16.247-.4 11.123 2.33 5.665l.073-.119C4.83 2.351 8.86 2.182 12.006 4.97c3.221-2.796 7.185-2.625 9.594.58zm-1.24.847c-1.968-2.56-5.154-2.542-7.83.133a.75.75 0 0 1-1.068-.007C8.88 3.866 5.628 3.843 3.64 6.399c-2.182 4.453.483 8.748 8.36 13 7.878-4.253 10.543-8.548 8.36-13.002z"></path></svg>
+                                    </div> 
+                                    <div> 
+                                        Wishlist
+                                    </div>
+                                </a>
+                            </span>
+                            <span class="red-on-hover">
+                                <a href="">
+                                <div class="bottom-header-icons">
+                                    <svg viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M6.229 4.5H21.75a.75.75 0 0 1 .735.897l-1.5 7.5a.75.75 0 0 1-.735.603H7.129l.3 3H18.75a.75.75 0 1 1 0 1.5h-12a.75.75 0 0 1-.746-.675L4.57 3H2.25a.75.75 0 0 1 0-1.5h3a.75.75 0 0 1 .746.675L6.23 4.5zm.15 1.5l.6 6h12.656l1.2-6H6.38zM7.5 22.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm10.5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"></path></svg>
+                                </div>
+                                <div>
+                                    Trolley
+                                </div>
+                                </a>
+                            </span>
+                        </span>
+                    </div>
+                </nav>
+            </div>
+        </section>
+    </header>
+    <script>
+
+        const search_bar_form = document.getElementsByName("top search bar")[0]
+        const svg_b = document.getElementById("cancel-search-button")
+
+        search_bar_form.addEventListener("keydown", (event) =>  {
+            if ((event.which >= 48 && event.which <= 57) || (event.which >= 65 && event.which <= 90) || (event.which == 32)) {
+                svg_b.style.visibility = "visible"
+                svg_b.children[0].style.display = "block"
+                search_bar_form.style.color = "#333"
+                search_bar_form.style.fontStyle = "normal"
+            }
+            else if (((event.key == "Backspace") && (search_bar_form.value.length == 0)) || ((search_bar_form.value.length == 1) && (event.key == "Backspace"))){
+                svg_b.style.visibility = "hidden"
+                svg_b.children[0].style.display = "none"
+                search_bar_form.style.color = "initial"
+                search_bar_form.style.fontStyle = "italic"
+            }
+        })
+        
+        search_bar_form.addEventListener("mouseover", () => {
+            svg_b.style.backgroundColor = "#F5F5F5"
+
+            search_bar_form.addEventListener("mouseout", () => {
+                svg_b.style.backgroundColor = "initial"
+            })
+
+            svg_b.addEventListener("mouseover", () =>  {
+
+                svg_b.children[0].children[0].setAttribute('d', "M10.94 12l-3.22 3.22a.75.75 0 0 0 1.06 1.06L12 13.06l3.22 3.22a.75.75 0 0 0 1.06-1.06L13.06 12l3.22-3.22a.75.75 0 0 0-1.06-1.06L12 10.94 8.78 7.72a.75.75 0 0 0-1.06 1.06L10.94 12zM12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5z")
+
+                svg_b.addEventListener("mouseout", () =>  {
+                    svg_b.children[0].children[0].setAttribute('d', "M10.94 12L7.72 8.78a.75.75 0 0 1 1.06-1.06L12 10.94l3.22-3.22a.75.75 0 0 1 1.06 1.06L13.06 12l3.22 3.22a.75.75 0 0 1-1.06 1.06L12 13.06l-3.22 3.22a.75.75 0 0 1-1.06-1.06L10.94 12zM12 22.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm0-1.5a9 9 0 1 0 0-18 9 9 0 0 0 0 18z")
+                })
+
+                svg_b.addEventListener("click", () => {
+                    search_bar_form.value = ""
+                    svg_b.style.visibility = "hidden"
+                    svg_b.children[0].style.display = "none"
+                    search_bar_form.style.color = "initial"
+                    search_bar_form.style.fontStyle = "italic"
+                })  
+            })
+        })  
+        
+    </script>
+</body>
