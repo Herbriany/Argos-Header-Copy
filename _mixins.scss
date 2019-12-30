@@ -1,0 +1,7 @@
+@mixin flexType($justifyType) {
+    display: flex;
+    align-items: center;
+    justify-content: $justifyType;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}

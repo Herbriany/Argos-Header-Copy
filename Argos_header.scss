@@ -1,0 +1,348 @@
+@import url(https://fonts.googleapis.com/css?family=Barlow:400,600);
+@import "./variables";
+@import "./mixins";
+
+body{
+    margin:0px;
+    font-family: Barlow, Arial, Helvetica;
+}
+
+a {
+    text-decoration: none;
+    color: $textColour;
+}
+
+#header-border {
+    width: 100%;
+    border-bottom: 1px solid $darkerGrey;
+}
+
+#top-bar {
+    @include flexType(flex-end);
+    background-color: $backgroundGrey;
+    padding: 5px 20px 5px 20px;
+    
+}
+#logged-in {
+    visibility: hidden;
+}
+
+.line-break {
+    color: $darkerGrey;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.top-bar-header-icons {
+    padding-right: 16px;
+}
+
+form {
+    margin: 0px;
+}
+
+#bottom-header {
+    padding: 15px;
+    @include flexType(space-around);
+    position: relative;
+    form {
+        @include flexType(space-around);
+        width:auto;
+        order: 3;
+        flex-basis: 100%;
+        height: 60px;
+        [type="search"] {
+            width:100%;
+            border-top-left-radius: 3px;
+            border-bottom-left-radius: 3px;
+            color:$searchButtonTextColor;
+            width: 100%;
+            margin-left: -40px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+            padding-left: 40px;
+            border-right: none;
+            &:hover {
+                background-color: $backgroundGrey;
+            }
+        }
+        [name="main-search-button"] {
+            border-top-right-radius: 3px;
+            border-bottom-right-radius: 3px;
+            background-color:$searchFormColour;
+            color: $backgroundGrey;
+            margin-right: 40px;
+            font-weight: 600;
+            &:hover {
+                background-color: $textColour;
+            }
+        }
+    }
+}
+
+#argos-logo {
+    order: 1;
+    width: 70px;
+    height: 60px;
+    padding-right: 10px;
+}
+
+#argos-logo-container {
+    margin-right: 20px;
+}
+
+#right-cta-bottom-header {
+    @include flexType(space-around);
+    width: 300px;
+    order: 4;
+    flex-basis: 300px;
+}
+
+#right-cta-bottom-header > * {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#left-cta-bottom-header {
+    @include flexType(space-around);
+    width: 440px;
+    order: 2;
+    margin-right: 40px;
+}
+
+.nav-block {
+    @include flexType(space-around);
+    height: 55px;
+    padding: 0 10px 0 10px;
+    margin: 0 10px 0 10px;
+}
+
+#shop-hidden-for-non-mobile {
+    display: none;
+}
+
+.bottom-header-icons {
+    @include flexType(space-around);
+}
+
+#bottom-header form > * {
+    padding: 10px;
+    border-color: $searchFormColour;
+    border-width: 1px;
+    height: 45px;
+    font-family: Barlow, Arial, Helvetica;
+    font-size: 16px;
+}
+
+#search-text {
+    font-weight: 800px;
+}
+
+#cancel-search-button {
+    background-color: #FFF;
+    border: none;
+    border-radius: 50%;
+    height: 17px !important;
+    width: 17px !important;
+    position: relative;
+    z-index: 3;
+    right: 140px;
+    visibility:hidden;
+    svg {
+        position: relative;
+        z-index: 3;
+        right:10px;
+        bottom:10px;
+        display: none;
+    }
+}
+
+[type="search"]::-webkit-search-cancel-button {
+    display:none;
+}
+
+#search-looking-glass-input {
+    position: relative;
+    z-index: 2;
+}
+
+#search-looking-glass-button {
+    display:none;
+}
+
+@media(max-width:767px) {
+    #top-bar{
+        display: none;
+    }
+
+    #left-cta-bottom-header {
+        display:none;
+    }
+
+    #bottom-header {
+        padding-left: 10px;
+        padding-top: 15px;
+        form {
+            order: 3;
+            position: absolute;
+            top: 60px;
+            width: 95%;
+            margin-right: 30px;
+            [type="search"] {
+                margin-left:0px; 
+                padding-left:10px;
+            }
+            [name="main-search-button"] {
+                margin-right:-10px;
+            }
+        } 
+    }
+    
+    #shop-hidden-for-non-mobile {
+        display: inline;
+    }
+
+    #argos-logo {
+        height:42px;
+        width: 49px;
+        
+    }
+
+    #argos-logo-container {
+        max-width: 487px;
+        width: 100%;
+    }
+
+    #header-border {
+        height: 120px;
+    }
+
+    #right-cta-bottom-header {
+        order: 2;
+        min-width: 240px;
+        max-width: 240px;
+    }
+}
+
+@media(min-width:768px) and (max-width:1199px) {
+    #header-border {
+        height: 165px;
+    }
+
+    #argos-logo { 
+        width:60px;
+        height:51px;
+    }
+    
+    #bottom-header {
+        position:relative;
+        height: 51px;
+        form {
+            @include flexType(space-around);
+            order: 2;
+            min-width: 400px;
+            max-width: 1200px;
+            width:auto;
+            flex-grow:1;
+            flex-basis: 100%;
+        } 
+    }
+    
+    #right-cta-bottom-header {
+        order: 3;
+        max-width: 210px;
+    }
+
+    #left-cta-bottom-header {
+        order: 4;
+        height:65px;
+        position: absolute;
+        top: 70px;
+        left: 5px;
+        max-width: 342px;
+    }
+}
+
+@media(max-width:991px) {
+    #search-looking-glass-button {
+        display: block;
+    }
+
+    #search-text {
+        display: none;
+    }  
+
+    button {
+        height: 38px;
+    }
+    
+    #search-looking-glass-input {
+        display:none;
+    }
+
+}
+
+@media(min-width:768px) and (max-width:991px) {
+    #bottom-header form [type="search"] {
+        margin-left:30px;
+        padding-left:10px;
+    }
+}
+
+@media(min-width:992px) and (max-width:1199px) {
+    #bottom-header form [type="search"] {
+        margin-left:20px;
+        padding-left:40px;
+    }
+
+    #search-looking-glass-input {
+        left: 60px;
+    }
+    #argos-logo-container {
+        margin-right: 0px;
+    }
+}
+
+#shop-arrow {
+    position:relative;
+    vertical-align: text-bottom;
+}
+
+#shop-arrow-container:hover #shop-arrow{
+    animation-name: rotate-180;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotate-180 {
+    0% { transform:rotate(0deg)}
+    100% { transform: rotate(180deg)}
+}
+
+.red-underline {
+    display:block;
+    margin: 0px auto;
+
+}
+.red-underline-on-hover:hover .red-underline {
+    animation-name: red-underline;
+    animation-duration: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes red-underline {
+    0% {border-bottom: 2.5px solid $ArgosRed;
+        width: 0%}
+    100% {border-bottom: 2.5px solid $ArgosRed;
+        width:90%}
+}
+
+.red-on-hover:hover > * {
+    color: $ArgosRed;
+    fill: $ArgosRed;
+}
+
+input:focus::placeholder {
+    visibility: "";
+}

@@ -1,0 +1,513 @@
+@import url(https://fonts.googleapis.com/css?family=Barlow:400,600);
+body {
+  margin: 0px;
+  font-family: Barlow, Arial, Helvetica;
+}
+
+a {
+  text-decoration: none;
+  color: #333333;
+}
+
+#header-border {
+  width: 100%;
+  border-bottom: 1px solid #CCCCCC;
+}
+
+#top-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  background-color: #F5F5F5;
+  padding: 5px 20px 5px 20px;
+}
+
+#logged-in {
+  visibility: hidden;
+}
+
+.line-break {
+  color: #CCCCCC;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.top-bar-header-icons {
+  padding-right: 16px;
+}
+
+form {
+  margin: 0px;
+}
+
+#bottom-header {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  position: relative;
+}
+
+#bottom-header form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: auto;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  height: 60px;
+}
+
+#bottom-header form [type="search"] {
+  width: 100%;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  color: #939393;
+  width: 100%;
+  margin-left: -40px;
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+  padding-left: 40px;
+  border-right: none;
+}
+
+#bottom-header form [type="search"]:hover {
+  background-color: #F5F5F5;
+}
+
+#bottom-header form [name="main-search-button"] {
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-color: #707070;
+  color: #F5F5F5;
+  margin-right: 40px;
+  font-weight: 600;
+}
+
+#bottom-header form [name="main-search-button"]:hover {
+  background-color: #333333;
+}
+
+#argos-logo {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  width: 70px;
+  height: 60px;
+  padding-right: 10px;
+}
+
+#argos-logo-container {
+  margin-right: 20px;
+}
+
+#right-cta-bottom-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 300px;
+  -webkit-box-ordinal-group: 5;
+      -ms-flex-order: 4;
+          order: 4;
+  -ms-flex-preferred-size: 300px;
+      flex-basis: 300px;
+}
+
+#right-cta-bottom-header > * {
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#left-cta-bottom-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  width: 440px;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  margin-right: 40px;
+}
+
+.nav-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  height: 55px;
+  padding: 0 10px 0 10px;
+  margin: 0 10px 0 10px;
+}
+
+#shop-hidden-for-non-mobile {
+  display: none;
+}
+
+.bottom-header-icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#bottom-header form > * {
+  padding: 10px;
+  border-color: #707070;
+  border-width: 1px;
+  height: 45px;
+  font-family: Barlow, Arial, Helvetica;
+  font-size: 16px;
+}
+
+#search-text {
+  font-weight: 800px;
+}
+
+#cancel-search-button {
+  background-color: #FFF;
+  border: none;
+  border-radius: 50%;
+  height: 17px !important;
+  width: 17px !important;
+  position: relative;
+  z-index: 3;
+  right: 140px;
+  visibility: hidden;
+}
+
+#cancel-search-button svg {
+  position: relative;
+  z-index: 3;
+  right: 10px;
+  bottom: 10px;
+  display: none;
+}
+
+[type="search"]::-webkit-search-cancel-button {
+  display: none;
+}
+
+#search-looking-glass-input {
+  position: relative;
+  z-index: 2;
+}
+
+#search-looking-glass-button {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #top-bar {
+    display: none;
+  }
+  #left-cta-bottom-header {
+    display: none;
+  }
+  #bottom-header {
+    padding-left: 10px;
+    padding-top: 15px;
+  }
+  #bottom-header form {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    position: absolute;
+    top: 60px;
+    width: 95%;
+    margin-right: 30px;
+  }
+  #bottom-header form [type="search"] {
+    margin-left: 0px;
+    padding-left: 10px;
+  }
+  #bottom-header form [name="main-search-button"] {
+    margin-right: -10px;
+  }
+  #shop-hidden-for-non-mobile {
+    display: inline;
+  }
+  #argos-logo {
+    height: 42px;
+    width: 49px;
+  }
+  #argos-logo-container {
+    max-width: 487px;
+    width: 100%;
+  }
+  #header-border {
+    height: 120px;
+  }
+  #right-cta-bottom-header {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    min-width: 240px;
+    max-width: 240px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  #header-border {
+    height: 165px;
+  }
+  #argos-logo {
+    width: 60px;
+    height: 51px;
+  }
+  #bottom-header {
+    position: relative;
+    height: 51px;
+  }
+  #bottom-header form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    min-width: 400px;
+    max-width: 1200px;
+    width: auto;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+  #right-cta-bottom-header {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    max-width: 210px;
+  }
+  #left-cta-bottom-header {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+    height: 65px;
+    position: absolute;
+    top: 70px;
+    left: 5px;
+    max-width: 342px;
+  }
+}
+
+@media (max-width: 991px) {
+  #search-looking-glass-button {
+    display: block;
+  }
+  #search-text {
+    display: none;
+  }
+  button {
+    height: 38px;
+  }
+  #search-looking-glass-input {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #bottom-header form [type="search"] {
+    margin-left: 30px;
+    padding-left: 10px;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  #bottom-header form [type="search"] {
+    margin-left: 20px;
+    padding-left: 40px;
+  }
+  #search-looking-glass-input {
+    left: 60px;
+  }
+  #argos-logo-container {
+    margin-right: 0px;
+  }
+}
+
+#shop-arrow {
+  position: relative;
+  vertical-align: text-bottom;
+}
+
+#shop-arrow-container:hover #shop-arrow {
+  -webkit-animation-name: rotate-180;
+          animation-name: rotate-180;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes rotate-180 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes rotate-180 {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+.red-underline {
+  display: block;
+  margin: 0px auto;
+}
+
+.red-underline-on-hover:hover .red-underline {
+  -webkit-animation-name: red-underline;
+          animation-name: red-underline;
+  -webkit-animation-duration: 0.2s;
+          animation-duration: 0.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes red-underline {
+  0% {
+    border-bottom: 2.5px solid #D42114;
+    width: 0%;
+  }
+  100% {
+    border-bottom: 2.5px solid #D42114;
+    width: 90%;
+  }
+}
+
+@keyframes red-underline {
+  0% {
+    border-bottom: 2.5px solid #D42114;
+    width: 0%;
+  }
+  100% {
+    border-bottom: 2.5px solid #D42114;
+    width: 90%;
+  }
+}
+
+.red-on-hover:hover > * {
+  color: #D42114;
+  fill: #D42114;
+}
+
+input:focus::-webkit-input-placeholder {
+  visibility: "";
+}
+
+input:focus:-ms-input-placeholder {
+  visibility: "";
+}
+
+input:focus::-ms-input-placeholder {
+  visibility: "";
+}
+
+input:focus::placeholder {
+  visibility: "";
+}
+/*# sourceMappingURL=Argos_header.css.map */
