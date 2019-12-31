@@ -52,6 +52,9 @@ form {
         flex-basis: 100%;
         height: 60px;
         [type="search"] {
+            &:hover {
+                background-color: $backgroundGrey;
+            }
             width:100%;
             border-top-left-radius: 3px;
             border-bottom-left-radius: 3px;
@@ -63,20 +66,17 @@ form {
             z-index: 1;
             padding-left: 40px;
             border-right: none;
-            &:hover {
-                background-color: $backgroundGrey;
-            }
         }
         [name="main-search-button"] {
+            &:hover {
+                background-color: $textColour;
+            }
             border-top-right-radius: 3px;
             border-bottom-right-radius: 3px;
             background-color:$searchFormColour;
             color: $backgroundGrey;
             margin-right: 40px;
             font-weight: 600;
-            &:hover {
-                background-color: $textColour;
-            }
         }
     }
 }
