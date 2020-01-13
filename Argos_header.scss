@@ -5,11 +5,16 @@
 body{
     margin:0px;
     font-family: Barlow, Arial, Helvetica;
+    overflow-y: hidden;
 }
 
 a {
     text-decoration: none;
     color: $textColour;
+}
+
+ul {
+    list-style-type: none;
 }
 
 #header-border {
@@ -44,7 +49,6 @@ form {
 #bottom-header {
     padding: 15px;
     @include flexType(space-around);
-    position: relative;
     form {
         @include flexType(space-around);
         width:auto;
@@ -106,9 +110,76 @@ form {
 
 #left-cta-bottom-header {
     @include flexType(space-around);
-    width: 440px;
+    width: 300px;
     order: 2;
     margin-right: 40px;
+}
+
+#megaNav {
+    position: relative;
+}
+
+#gridIdentifier {
+    position: absolute;
+    left: -120px;
+    top:-5px;
+    z-index: 1000;
+    box-shadow: 10px 30px 10px $boxShadow;
+    width: 96vw;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    padding-top:35px;
+    padding-inline-start: 10px;
+    padding-right: 20px;
+    margin: 0;
+    h1 {
+        margin-left: 20px;
+        margin-bottom: 0;
+        margin-block-start: 5px;
+    }
+}
+
+#column1 {
+    ul {
+        padding-inline-start: 10px;
+        li {
+            border-bottom: 1px solid $listBorderUnderline;
+            padding: 15px 0px 15px 10px;
+            text-align: left;
+            &:hover {
+                background-color: $backgroundGrey;
+            }
+            a {
+                @include flexType(space-between);
+                svg {
+                    float: right;
+                    margin-top: 2px;
+                }
+            }
+        } 
+    }
+}
+
+#column2 {
+    display: grid;
+    grid-template-columns: repeat(5, 20%)
+}
+
+.otherColumn {
+    padding-inline-start: 20px;
+    padding-block-start: 20px;
+    h3 {
+        border-bottom: 1px solid $listBorderUnderline; 
+        padding-bottom: 10px;
+        margin-top: 10px;
+    }
+    ul {
+        padding-left: 0;
+        padding-bottom: 10px;
+        li {
+            padding-bottom: 6px;
+        }
+    }
 }
 
 .nav-block {
@@ -136,7 +207,7 @@ form {
 }
 
 #search-text {
-    font-weight: 800px;
+    font-weight: 800;
 }
 
 #cancel-search-button {
@@ -223,6 +294,9 @@ form {
         min-width: 240px;
         max-width: 240px;
     }
+    #megaNav {
+        display:none;
+    }
 }
 
 @media(min-width:768px) and (max-width:1199px) {
@@ -288,6 +362,12 @@ form {
         margin-left:30px;
         padding-left:10px;
     }
+
+    #identifier {
+        top: 70px;
+        width: 95.5vw;
+        grid-template-columns: 100%;
+    }
 }
 
 @media(min-width:992px) and (max-width:1199px) {
@@ -302,40 +382,41 @@ form {
     #argos-logo-container {
         margin-right: 0px;
     }
+
+    #identifier {
+        left: -100px;
+        top: 70px;
+    }
 }
 
 #shop-arrow {
-    position:relative;
-    vertical-align: text-bottom;
+    position: relative;
+    margin-top: 4px;
+    margin-left: 6px;
+}
+
+#shop-arrow-container #shop-arrow{
+    transition:all 0.2s ease-in-out;
+    transform: rotate(0deg);
 }
 
 #shop-arrow-container:hover #shop-arrow{
-    animation-name: rotate-180;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
+    transform: rotate(180deg);
 }
 
-@keyframes rotate-180 {
-    0% { transform:rotate(0deg)}
-    100% { transform: rotate(180deg)}
+.red-underline-on-hover:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid #d42114;
+    transform: scaleX(0);
+    transition: all .15s ease-in-out;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto; 
+    height: 2px; 
 }
-
-.red-underline {
-    display:block;
-    margin: 0px auto;
-
-}
-.red-underline-on-hover:hover .red-underline {
-    animation-name: red-underline;
-    animation-duration: 0.2s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes red-underline {
-    0% {border-bottom: 2.5px solid $ArgosRed;
-        width: 0%}
-    100% {border-bottom: 2.5px solid $ArgosRed;
-        width:90%}
+.red-underline-on-hover:hover:after, .red-underline-on-hover:active:after, .red-underline-on-hover:focus:after{
+    transform:scaleX(1);
 }
 
 .red-on-hover:hover > * {
@@ -345,4 +426,11 @@ form {
 
 input:focus::placeholder {
     visibility: "";
+}
+
+.underline-on-hover:hover {
+    // border-bottom: 1px solid #000;
+    // padding-bottom: -5px;
+    text-decoration: underline;
+    text-decoration-thickness: 0.1em;
 }

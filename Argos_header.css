@@ -2,11 +2,16 @@
 body {
   margin: 0px;
   font-family: Barlow, Arial, Helvetica;
+  overflow-y: hidden;
 }
 
 a {
   text-decoration: none;
   color: #333333;
+}
+
+ul {
+  list-style-type: none;
 }
 
 #header-border {
@@ -68,7 +73,6 @@ form {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  position: relative;
 }
 
 #bottom-header form {
@@ -182,11 +186,108 @@ form {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
-  width: 440px;
+  width: 300px;
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
   margin-right: 40px;
+}
+
+#megaNav {
+  position: relative;
+}
+
+#gridIdentifier {
+  position: absolute;
+  left: -120px;
+  top: -5px;
+  z-index: 1000;
+  -webkit-box-shadow: 10px 30px 10px #FDFDFD;
+          box-shadow: 10px 30px 10px #FDFDFD;
+  width: 96vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 5fr;
+      grid-template-columns: 1fr 5fr;
+  padding-top: 35px;
+  -webkit-padding-start: 10px;
+          padding-inline-start: 10px;
+  padding-right: 20px;
+  margin: 0;
+}
+
+#gridIdentifier h1 {
+  margin-left: 20px;
+  margin-bottom: 0;
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+}
+
+#column1 ul {
+  -webkit-padding-start: 10px;
+          padding-inline-start: 10px;
+}
+
+#column1 ul li {
+  border-bottom: 1px solid #E4E4E4;
+  padding: 15px 0px 15px 10px;
+  text-align: left;
+}
+
+#column1 ul li:hover {
+  background-color: #F5F5F5;
+}
+
+#column1 ul li a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+#column1 ul li a svg {
+  float: right;
+  margin-top: 2px;
+}
+
+#column2 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (20%)[5];
+      grid-template-columns: repeat(5, 20%);
+}
+
+.otherColumn {
+  -webkit-padding-start: 20px;
+          padding-inline-start: 20px;
+  -webkit-padding-before: 20px;
+          padding-block-start: 20px;
+}
+
+.otherColumn h3 {
+  border-bottom: 1px solid #E4E4E4;
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+
+.otherColumn ul {
+  padding-left: 0;
+  padding-bottom: 10px;
+}
+
+.otherColumn ul li {
+  padding-bottom: 6px;
 }
 
 .nav-block {
@@ -240,7 +341,7 @@ form {
 }
 
 #search-text {
-  font-weight: 800px;
+  font-weight: 800;
 }
 
 #cancel-search-button {
@@ -324,6 +425,9 @@ form {
     min-width: 240px;
     max-width: 240px;
   }
+  #megaNav {
+    display: none;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1199px) {
@@ -403,6 +507,12 @@ form {
     margin-left: 30px;
     padding-left: 10px;
   }
+  #identifier {
+    top: 70px;
+    width: 95.5vw;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
@@ -416,78 +526,47 @@ form {
   #argos-logo-container {
     margin-right: 0px;
   }
+  #identifier {
+    left: -100px;
+    top: 70px;
+  }
 }
 
 #shop-arrow {
   position: relative;
-  vertical-align: text-bottom;
+  margin-top: 4px;
+  margin-left: 6px;
+}
+
+#shop-arrow-container #shop-arrow {
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 #shop-arrow-container:hover #shop-arrow {
-  -webkit-animation-name: rotate-180;
-          animation-name: rotate-180;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 
-@-webkit-keyframes rotate-180 {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-}
-
-@keyframes rotate-180 {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
-  }
-}
-
-.red-underline {
+.red-underline-on-hover:after {
+  content: "";
   display: block;
-  margin: 0px auto;
+  border-bottom: 2px solid #d42114;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 2px;
 }
 
-.red-underline-on-hover:hover .red-underline {
-  -webkit-animation-name: red-underline;
-          animation-name: red-underline;
-  -webkit-animation-duration: 0.2s;
-          animation-duration: 0.2s;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-}
-
-@-webkit-keyframes red-underline {
-  0% {
-    border-bottom: 2.5px solid #D42114;
-    width: 0%;
-  }
-  100% {
-    border-bottom: 2.5px solid #D42114;
-    width: 90%;
-  }
-}
-
-@keyframes red-underline {
-  0% {
-    border-bottom: 2.5px solid #D42114;
-    width: 0%;
-  }
-  100% {
-    border-bottom: 2.5px solid #D42114;
-    width: 90%;
-  }
+.red-underline-on-hover:hover:after, .red-underline-on-hover:active:after, .red-underline-on-hover:focus:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
 }
 
 .red-on-hover:hover > * {
@@ -509,5 +588,10 @@ input:focus::-ms-input-placeholder {
 
 input:focus::placeholder {
   visibility: "";
+}
+
+.underline-on-hover:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
 }
 /*# sourceMappingURL=Argos_header.css.map */
