@@ -1,0 +1,27 @@
+{
+  "name": "brianargosnewplay",
+  "version": "1.0.0",
+  "description": "Probably don't need this anymore",
+  "main": "javascriptHeader.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d javascript"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://BrianDerrrig@bitbucket.org/BrianDerrrig/brianargosnewplay.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/BrianDerrrig/brianargosnewplay#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-es6-promise": "^1.1.1",
+    "babel-preset-env": "^1.7.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.8.0",
+    "promise-polyfill": "^8.1.3"
+  }
+}

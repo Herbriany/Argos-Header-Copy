@@ -4,7 +4,7 @@
         <link rel="dns-prefetch" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Barlow:400,600">
-        <link href="./Argos_header.css" rel="stylesheet">
+        <link href="./CSS/Argos_header.css" rel="stylesheet">
         <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
         <link rel="preconnect" href="https://media.4rgos.it" />
         <link rel="preconnect" crossorigin="anonymous" href="https://fonts.gstatic.com" />
@@ -16,7 +16,7 @@
                 <div id="header-border">
                     <article id="top-bar">
                         <span id="logged-in" class="red-on-hover">
-                            Hi, <strong><%Username%></strong> 
+                            Hi, <strong>Username</strong> 
                             <a href="">
                                 (Sign out)
                             </a> 
@@ -27,7 +27,7 @@
                             <span>Stores</span>
                         </a>
                         <span class="line-break">|</span>
-                        <a href=""class="red-on-hover">
+                        <a href="" class="red-on-hover">
                             <svg class="top-bar-header-icons" viewBox="0 0 24 24" height="1em" width="1em"><path d="M11.25 15v-3h-.75a.75.75 0 1 1 0-1.5H12a.75.75 0 0 1 .75.75V15h.75a.75.75 0 1 1 0 1.5h-3a.75.75 0 1 1 0-1.5h.75zm.75 7.5C6.201 22.5 1.5 17.799 1.5 12S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm0-1.5a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0-12a.75.75 0 1 1 0-1.5.75.75 0 0 1 0 1.5z"></path></svg>
                             <span>Help</span>
                         </a>
@@ -62,125 +62,8 @@
                                     <div>
                                         <ul id="gridIdentifier">
                                             <div id="column1">
-                                                <ul >
-                                                    <!-- <li>
-                                                        <a href="">
-                                                        <span>Technology</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>  
-                                                        </a>
-                                                    </li>
-                                                    
-                                                    <a href="">
-                                                        <li>
-                                                            <span>Home &amp; Furniture</span>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>       
-                                                        </li>
-                                                    </a>
-                                                    <li>
-                                                        <span>Garden &amp; DIY</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>
-                                                    </li>
-                                                    <li>
-                                                        <span>Appliances</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>
-                                                    </li>
-                                                    <li>
-                                                        <span>Baby &amp; Nursery</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>     
-                                                    </li>
-                                                    <li>
-                                                        <span>Toys</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>
-                                                    </li>
-                                                    <li>
-                                                        <span>Sports &amp; Leisure</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>
-                                                        
-                                                    </li>
-                                                    <li>
-                                                        <span>Health &amp; Beauty</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>  
-                                                    </li>
-                                                    <li>
-                                                        <span>Clothing</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg> 
-                                                    </li>
-                                                    <a href="">
-                                                        <li>
-                                                            <span>Jewellery &amp; Watches</span>
-                                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>        
-                                                        </li>
-                                                    </a>
-                                                    <li>
-                                                        <span>Gifts</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>                                           
-                                                    </li>
-                                                    <li>
-                                                        <span>Advice &amp; Inspiration</span>
-                                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>
-                                                    </li> -->
+                                                <ul id="firstList">
                                                 </ul>
-                                            </div>
-                                            <div >
-                                                <!-- <h1> Shop all Technology
-                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#333" width="1em" height="1em" data-test="megamenu-category-chevron-0" class="_1yQY6"><path d="M14.69 12l-6.97 6.97a.75.75 0 0 0 1.06 1.06l7.5-7.5a.75.75 0 0 0 0-1.06l-7.5-7.5a.75.75 0 0 0-1.06 1.06L14.69 12z"></path></svg>
-                                                </h1>
-                                                <div id="column2">
-                                                    <ul class="otherColumn">
-                                                        <h3>Television &amp; Accessories</h3> 
-                                                        <ul >
-                                                            <li><a href="" class="underline-on-hover">Televisions</li></a>
-                                                            <li>TV Wall Brackets</li>
-                                                            <li>TV Aerials</li>
-                                                            <li>Shop All TV Accessories</li>
-                                                        </ul>
-                                                        <h3>Home Cinema, Blu-ray &amp; DVD</h3> 
-                                                        <ul>
-                                                            <li>Home Cinema Systems</li>
-                                                            <li>Sound Bars</li>
-                                                            <li>DVD Players</li>
-                                                            <li>Blu-ray Players</li>
-                                                        </ul>
-                                                        <h3>Smart TV &amp; Satellite Boxes</h3> 
-                                                        <ul>
-                                                            <li>Home Cinema Systems</li>
-                                                            <li>Sound Bars</li>
-                                                            <li>DVD Players</li>
-                                                            <li>Blu-ray Players</li>
-                                                        </ul>
-                                                    </ul>
-                                                    <ul class="otherColumn">
-                                                        <a href="">
-                                                            <li>
-                                                                <span>Technology</span>  
-                                                            </li>
-                                                        </a>
-                                                    </ul>
-                                                    <ul class="otherColumn">
-                                                        <a href="">
-                                                            <li>
-                                                                <span>Technology</span>
-                                                                  
-                                                            </li>
-                                                        </a>
-                                                    </ul>
-                                                    <ul class="otherColumn">
-                                                        <a href="">
-                                                            <li>
-                                                                <span>Technology</span>
-                                                                  
-                                                            </li>
-                                                        </a>
-                                                    </ul>
-                                                    <ul class="otherColumn">
-                                                        <a href="">
-                                                            <li>
-                                                                <span>Technology</span>
-                                                                  
-                                                            </li>
-                                                        </a>
-                                                    </ul>
-                                                </div> -->
                                             </div>
                                         </ul>
                                     </div>
@@ -245,6 +128,6 @@
                 </div>
             </section>
         </header>
-        <script type="text/javascript" src="./javascriptHeader.js"></script>
+        <script type="text/javascript" src="./src/javascriptHeader.js"></script>
     </body>
 </html>

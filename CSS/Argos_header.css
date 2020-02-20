@@ -2,7 +2,7 @@
 body {
   margin: 0px;
   font-family: Barlow, Arial, Helvetica;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 a {
@@ -230,15 +230,15 @@ form {
 
 #column1 ul li {
   border-bottom: 1px solid #E4E4E4;
-  padding: 15px 0px 15px 10px;
   text-align: left;
 }
 
-#column1 ul li:hover {
-  background-color: #F5F5F5;
+#column1 ul li a svg {
+  float: right;
+  margin-top: 2px;
 }
 
-#column1 ul li a {
+.list-object a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -254,39 +254,91 @@ form {
           flex-direction: row;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
+  padding: 15px 0px 15px 10px;
 }
 
-#column1 ul li a svg {
-  float: right;
-  margin-top: 2px;
+.list-object:hover {
+  background-color: #F5F5F5;
 }
 
-#column2 {
+.smaller-device-list-object a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  padding: 20px 20px 20px 10px;
+}
+
+.smaller-device-list-object:active {
+  background-color: #F5F5F5;
+  border: 1px solid #E9F1FF;
+}
+
+.list-return-button {
+  background-color: #F5F5F5;
+}
+
+.list-return-button a {
+  padding: 20px 20px 20px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  font-style: bold;
+}
+
+.list-return-button svg {
+  margin-right: 10px;
+}
+
+#column-2 {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (20%)[5];
       grid-template-columns: repeat(5, 20%);
 }
 
-.otherColumn {
+.other-column {
   -webkit-padding-start: 20px;
           padding-inline-start: 20px;
   -webkit-padding-before: 20px;
           padding-block-start: 20px;
 }
 
-.otherColumn h3 {
+.other-column h3 {
   border-bottom: 1px solid #E4E4E4;
   padding-bottom: 10px;
   margin-top: 10px;
 }
 
-.otherColumn ul {
+.other-column ul {
   padding-left: 0;
   padding-bottom: 10px;
 }
 
-.otherColumn ul li {
+.other-column ul li {
   padding-bottom: 6px;
 }
 
@@ -507,11 +559,24 @@ form {
     margin-left: 30px;
     padding-left: 10px;
   }
-  #identifier {
-    top: 70px;
-    width: 95.5vw;
+  #gridIdentifier {
+    overflow-y: visible;
+    top: 62px;
+    left: -125px;
+    width: 101vw;
     -ms-grid-columns: 100%;
         grid-template-columns: 100%;
+  }
+  #column1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    width: 300vw;
+  }
+  #column1 ul {
+    width: 100vw;
   }
 }
 
@@ -526,7 +591,7 @@ form {
   #argos-logo-container {
     margin-right: 0px;
   }
-  #identifier {
+  #gridIdentifier {
     left: -100px;
     top: 70px;
   }
@@ -592,6 +657,5 @@ input:focus::placeholder {
 
 .underline-on-hover:hover {
   text-decoration: underline;
-  text-decoration-thickness: 0.1em;
 }
 /*# sourceMappingURL=Argos_header.css.map */
